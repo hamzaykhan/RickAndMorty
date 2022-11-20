@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.hamza.rickandmorty.data.local.entity.CharacterEntity
 import com.hamza.rickandmorty.data.local.entity.EpisodeEntity
 
 @Dao
@@ -26,4 +27,13 @@ interface EpisodeDao {
         """
     )
     suspend fun searchEpisodeEntity(query: String): List<EpisodeEntity>
+
+    @Query(
+        """
+            SELECT * 
+            FROM episodeentity
+            WHERE page == :page
+        """
+    )
+    suspend fun getEpisodeEntities(page: Int): List<EpisodeEntity>
 }

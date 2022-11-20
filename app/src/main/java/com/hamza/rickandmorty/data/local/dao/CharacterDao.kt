@@ -22,8 +22,17 @@ interface CharacterDao {
             FROM characterentity
             WHERE LOWER(name) LIKE '%' || LOWER(:query) || '%' OR
                 LOWER(:query) == LOWER(gender) OR
-                LOWER(:query) == LOWER(species)
+                LOWER(:query) == LOWER(species) 
         """
     )
     suspend fun searchCharacterEntity(query: String): List<CharacterEntity>
+
+    @Query(
+        """
+            SELECT * 
+            FROM characterentity
+            WHERE page == :page
+        """
+    )
+    suspend fun getCharacterEntities(page: Int): List<CharacterEntity>
 }
