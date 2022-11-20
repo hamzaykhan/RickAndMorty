@@ -1,2 +1,2 @@
 # RickAndMorty
- Clean Architecture(JetPack Compose, MVVM, Dagger Hilt, Caching))
+ Clean Architecture(JetPack Compose, MVVM, Dagger Hilt, Caching)
