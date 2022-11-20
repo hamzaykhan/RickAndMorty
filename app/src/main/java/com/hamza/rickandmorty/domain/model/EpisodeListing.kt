@@ -2,7 +2,7 @@ package com.hamza.rickandmorty.domain.model
 
 import java.time.LocalDateTime
 
-data class RMEpisode(
+data class EpisodeListing(
     val id: Int,
     val name: String,
     val episode: String,

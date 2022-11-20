@@ -2,13 +2,13 @@ package com.hamza.rickandmorty.data.mapper
 
 import com.hamza.rickandmorty.data.local.entity.LocationEntity
 import com.hamza.rickandmorty.data.remote.dto.LocationDto
-import com.hamza.rickandmorty.domain.model.RMLocation
+import com.hamza.rickandmorty.domain.model.LocationListing
 import com.hamza.rickandmorty.util.Util
 import com.hamza.rickandmorty.util.toLocalDateTime
 
-fun LocationDto.toLocation(): List<RMLocation> {
+fun LocationDto.toLocation(): List<LocationListing> {
     return this.results.map { location ->
-        RMLocation(
+        LocationListing(
             id = location.id,
             name = location.name,
             type = location.type,
@@ -18,7 +18,7 @@ fun LocationDto.toLocation(): List<RMLocation> {
     }
 }
 
-fun RMLocation.toLocationEntity(): LocationEntity {
+fun LocationListing.toLocationEntity(): LocationEntity {
     return LocationEntity(
         id = id,
         name = name,
@@ -28,8 +28,8 @@ fun RMLocation.toLocationEntity(): LocationEntity {
     )
 }
 
-fun LocationEntity.toRMLocation(): RMLocation {
-    return RMLocation(
+fun LocationEntity.toLocationListing(): LocationListing {
+    return LocationListing(
         id = id,
         name = name,
         type = type,

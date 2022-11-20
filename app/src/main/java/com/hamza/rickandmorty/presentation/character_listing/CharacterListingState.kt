@@ -1,9 +1,9 @@
 package com.hamza.rickandmorty.presentation.character_listing
 
-import com.hamza.rickandmorty.domain.model.RMCharacter
+import com.hamza.rickandmorty.domain.model.CharacterListing
 
 data class CharacterListingState(
-    val characters: List<RMCharacter> = emptyList(),
+    val characters: List<CharacterListing> = emptyList(),
     val isLoading: Boolean = false,
     val isRefreshing: Boolean = false,
     val searchQuery: String = "",

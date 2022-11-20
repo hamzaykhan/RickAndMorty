@@ -1,6 +1,6 @@
 package com.hamza.rickandmorty.domain.model
 
-data class RMCharacter(
+data class CharacterListing(
     val id: Int,
     val name: String,
     val gender: String,

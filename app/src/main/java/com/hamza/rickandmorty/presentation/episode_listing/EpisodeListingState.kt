@@ -1,9 +1,9 @@
 package com.hamza.rickandmorty.presentation.episode_listing
 
-import com.hamza.rickandmorty.domain.model.RMEpisode
+import com.hamza.rickandmorty.domain.model.EpisodeListing
 
 data class EpisodeListingState(
-    val episodes: List<RMEpisode> = emptyList(),
+    val episodes: List<EpisodeListing> = emptyList(),
     val isLoading: Boolean = false,
     val isRefreshing: Boolean = false,
     val searchQuery: String = "",

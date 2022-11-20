@@ -2,13 +2,13 @@ package com.hamza.rickandmorty.data.mapper
 
 import com.hamza.rickandmorty.data.local.entity.EpisodeEntity
 import com.hamza.rickandmorty.data.remote.dto.EpisodeDto
-import com.hamza.rickandmorty.domain.model.RMEpisode
+import com.hamza.rickandmorty.domain.model.EpisodeListing
 import com.hamza.rickandmorty.util.Util
 import com.hamza.rickandmorty.util.toLocalDateTime
 
-fun EpisodeDto.toEpisode(): List<RMEpisode> {
+fun EpisodeDto.toEpisode(): List<EpisodeListing> {
     return this.results.map { episode ->
-        RMEpisode(
+        EpisodeListing(
             id= episode.id,
             name= episode.name,
             episode = episode.episode,
@@ -18,7 +18,7 @@ fun EpisodeDto.toEpisode(): List<RMEpisode> {
     }
 }
 
-fun RMEpisode.toEpisodeEntity(): EpisodeEntity {
+fun EpisodeListing.toEpisodeEntity(): EpisodeEntity {
     return EpisodeEntity(
         id = id,
         name = name,
@@ -28,8 +28,8 @@ fun RMEpisode.toEpisodeEntity(): EpisodeEntity {
     )
 }
 
-fun EpisodeEntity.toRMEpisode(): RMEpisode {
-    return RMEpisode(
+fun EpisodeEntity.toEpisodeListing(): EpisodeListing {
+    return EpisodeListing(
         id = id,
         name = name,
         episode = episode,

@@ -2,12 +2,12 @@ package com.hamza.rickandmorty.data.mapper
 
 import com.hamza.rickandmorty.data.local.entity.CharacterEntity
 import com.hamza.rickandmorty.data.remote.dto.CharacterDto
-import com.hamza.rickandmorty.domain.model.RMCharacter
+import com.hamza.rickandmorty.domain.model.CharacterListing
 import com.hamza.rickandmorty.util.Util
 
-fun CharacterDto.toCharacter(): List<RMCharacter> {
+fun CharacterDto.toCharacter(): List<CharacterListing> {
     return this.results.map { character ->
-         RMCharacter(
+         CharacterListing(
             id = character.id,
             name = character.name,
             gender = character.gender,
@@ -18,7 +18,7 @@ fun CharacterDto.toCharacter(): List<RMCharacter> {
     }
 }
 
-fun RMCharacter.toCharacterEntity(): CharacterEntity {
+fun CharacterListing.toCharacterEntity(): CharacterEntity {
     return CharacterEntity(
         id = id,
         name = name,
@@ -29,8 +29,8 @@ fun RMCharacter.toCharacterEntity(): CharacterEntity {
     )
 }
 
-fun CharacterEntity.toRMCharacter(): RMCharacter {
-    return RMCharacter(
+fun CharacterEntity.toCharacterListing(): CharacterListing {
+    return CharacterListing(
         id = id,
         name = name,
         gender = gender,
