@@ -8,11 +8,13 @@ import androidx.lifecycle.viewModelScope
 import com.hamza.rickandmorty.domain.repository.RMRepository
 import com.hamza.rickandmorty.util.wrapper.Resource
 import com.hamza.rickandmorty.util.wrapper.isEmptyResponse
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class LocationListingViewModel @Inject constructor(
     private val repository: RMRepository
 ): ViewModel() {

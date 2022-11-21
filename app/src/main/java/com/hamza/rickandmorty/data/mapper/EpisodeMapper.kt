@@ -12,7 +12,7 @@ fun EpisodeDto.toEpisode(): List<EpisodeListing> {
             id= episode.id,
             name= episode.name,
             episode = episode.episode,
-            air_date = episode.air_date.toLocalDateTime(),
+            air_date = episode.air_date,
             page = Util.getCurrentPage(this.info)
         )
     }

@@ -9,6 +9,6 @@ data class EpisodeEntity(
     @PrimaryKey(autoGenerate = false) val id: Int,
     val name: String,
     val episode: String,
-    val air_date: LocalDateTime,
+    val air_date: String,
     val page: Int
 )
