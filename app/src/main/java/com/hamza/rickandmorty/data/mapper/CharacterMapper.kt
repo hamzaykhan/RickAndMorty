@@ -13,7 +13,8 @@ fun CharacterDto.toCharacter(): List<CharacterListing> {
             gender = character.gender,
             species = character.species,
             status = character.status,
-            page = Util.getCurrentPage(this.info)
+            page = Util.getCurrentPage(this.info),
+            image = character.image
          )
     }
 }
@@ -25,7 +26,8 @@ fun CharacterListing.toCharacterEntity(): CharacterEntity {
         gender = gender,
         species = species,
         status = status,
-        page = page
+        page = page,
+        image = image
     )
 }
 
@@ -36,6 +38,7 @@ fun CharacterEntity.toCharacterListing(): CharacterListing {
         gender = gender,
         species = species,
         status = status,
-        page = page
+        page = page,
+        image = image
     )
 }

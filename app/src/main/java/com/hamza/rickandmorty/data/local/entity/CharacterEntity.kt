@@ -10,5 +10,6 @@ data class CharacterEntity(
     val gender: String,
     val species: String,
     val status: String,
-    val page: Int
+    val page: Int,
+    val image: String
 )

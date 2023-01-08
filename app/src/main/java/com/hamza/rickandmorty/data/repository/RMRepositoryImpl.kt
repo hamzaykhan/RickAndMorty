@@ -84,9 +84,9 @@ class RMRepositoryImpl @Inject constructor(
         }
 
         val result = callApi {
-            val data = rmApi.searchCharacters(name = query, gender = query, species = query).toCharacter()
-            rmDb.characterDao.insertCharacters(data.map { it.toCharacterEntity() })
-            data
+            rmApi.searchCharacters(name = query, gender = query, species = query).toCharacter().also {
+                rmDb.characterDao.insertCharacters(it.map { item -> item.toCharacterEntity() })
+            }
         }
         emit(result)
     }
